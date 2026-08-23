@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update table="sys_app_module">
+  <sys_app_module action="INSERT_OR_UPDATE">
+    <sys_id>4d5e9248972f45638dcab977027d64d3</sys_id>
+    <sys_scope display_value="x_2073292_leave_0">6b5e0ee7735e4310fae6fdb25ab8b71a</sys_scope>
+    <sys_update_name>sys_app_module_4d5e9248972f45638dcab977027d64d3</sys_update_name>
+    <active>true</active>
+    <application>abed1af5cb244b24874e8fddc45a1584</application>
+    <filter>employee=javascript:gs.getUserID()</filter>
+    <link_type>LIST</link_type>
+    <name>x_2073292_leave_0_leave_request</name>
+    <order>200</order>
+    <roles>x_2073292_leave_0.leave.employee</roles>
+    <title>My Leave Requests</title>
+  </sys_app_module>
+</record_update>

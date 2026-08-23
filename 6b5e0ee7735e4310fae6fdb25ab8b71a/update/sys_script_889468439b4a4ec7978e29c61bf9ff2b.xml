@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update table="sys_script">
+  <sys_script action="INSERT_OR_UPDATE">
+    <sys_id>889468439b4a4ec7978e29c61bf9ff2b</sys_id>
+    <sys_scope display_value="x_2073292_leave_0">6b5e0ee7735e4310fae6fdb25ab8b71a</sys_scope>
+    <sys_update_name>sys_script_889468439b4a4ec7978e29c61bf9ff2b</sys_update_name>
+    <abort_action>false</abort_action>
+    <access>package_private</access>
+    <action_delete>false</action_delete>
+    <action_insert>false</action_insert>
+    <action_query>false</action_query>
+    <action_update>true</action_update>
+    <active>true</active>
+    <add_message>false</add_message>
+    <advanced>true</advanced>
+    <change_fields>false</change_fields>
+    <client_callable>false</client_callable>
+    <collection>x_2073292_leave_0_leave_request</collection>
+    <condition/>
+    <description/>
+    <execute_function>false</execute_function>
+    <filter_condition>statusCHANGESTO cancelled</filter_condition>
+    <is_rest>false</is_rest>
+    <message/>
+    <name>Restore Balance on Cancellation</name>
+    <order>500</order>
+    <priority>100</priority>
+    <rest_method/>
+    <rest_method_text/>
+    <rest_service/>
+    <rest_service_text/>
+    <rest_variables/>
+    <role_conditions/>
+    <script><![CDATA[(function executeRule(current, previous /*null when async*/) {
+    // When status changes to 'cancelled' and previous status was 'approved'
+    var newStatus = current.getValue('status');
+    var oldStatus = previous.getValue('status');
+
+    if (newStatus == 'cancelled' && oldStatus == 'approved') {
+        var employeeId = current.getValue('employee');
+        var leaveType = current.getValue('leave_type');
+        var numberOfDays = parseInt(current.getValue('number_of_days'), 10);
+
+        // Find the leave balance record for this employee and leave type
+        var balanceGr = new GlideRecord('x_2073292_leave_0_leave_balance');
+        balanceGr.addQuery('employee', employeeId);
+        balanceGr.addQuery('leave_type', leaveType);
+        balanceGr.query();
+
+        if (balanceGr.next()) {
+            // Restore the balance
+            var currentUsed = parseInt(balanceGr.getValue('used'), 10);
+            var currentRemaining = parseInt(balanceGr.getValue('remaining'), 10);
+            balanceGr.setValue('used', currentUsed - numberOfDays);
+            balanceGr.setValue('remaining', currentRemaining + numberOfDays);
+            balanceGr.update();
+        }
+    }
+})(current, previous);
+]]></script>
+    <sys_name>Restore Balance on Cancellation</sys_name>
+    <sys_policy/>
+    <template/>
+    <when>after</when>
+  </sys_script>
+</record_update>

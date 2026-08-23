@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update table="sys_script_client">
+  <sys_script_client action="INSERT_OR_UPDATE">
+    <sys_id>5d2aeab5041b4b8da9ac92faa8cbb7fd</sys_id>
+    <sys_scope display_value="x_2073292_leave_0">6b5e0ee7735e4310fae6fdb25ab8b71a</sys_scope>
+    <sys_update_name>sys_script_client_5d2aeab5041b4b8da9ac92faa8cbb7fd</sys_update_name>
+    <active>true</active>
+    <applies_extended>false</applies_extended>
+    <description/>
+    <field/>
+    <global>true</global>
+    <isolate_script>false</isolate_script>
+    <messages/>
+    <name>Auto-populate Manager onLoad</name>
+    <script><![CDATA[function onLoad() {
+    if (g_form.isNewRecord()) {
+        // Auto-set manager from current user's manager
+        var userId = g_user.userID;
+
+        // Use GlideAjax or direct reference to get current user's manager
+        var ga = new GlideAjax('global.UserAjax');
+        ga.addParam('sysparm_name', 'getManagerID');
+        ga.addParam('sysparm_user_id', userId);
+        ga.getXMLAnswer(function(answer) {
+            if (answer) {
+                g_form.setValue('manager', answer);
+            }
+        });
+    }
+}
+]]></script>
+    <sys_name>Auto-populate Manager onLoad</sys_name>
+    <table>x_2073292_leave_0_leave_request</table>
+    <type>onLoad</type>
+    <ui_type>10</ui_type>
+    <view/>
+  </sys_script_client>
+</record_update>

@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update table="sys_app_module">
+  <sys_app_module action="INSERT_OR_UPDATE">
+    <sys_id>87bb338af50f400f8109bd0182ea86c9</sys_id>
+    <sys_scope display_value="x_2073292_leave_0">6b5e0ee7735e4310fae6fdb25ab8b71a</sys_scope>
+    <sys_update_name>sys_app_module_87bb338af50f400f8109bd0182ea86c9</sys_update_name>
+    <active>true</active>
+    <application>abed1af5cb244b24874e8fddc45a1584</application>
+    <filter>manager=javascript:gs.getUserID()^status=pending</filter>
+    <link_type>LIST</link_type>
+    <name>x_2073292_leave_0_leave_request</name>
+    <order>400</order>
+    <roles>x_2073292_leave_0.leave.manager</roles>
+    <title>Pending Approvals</title>
+  </sys_app_module>
+</record_update>

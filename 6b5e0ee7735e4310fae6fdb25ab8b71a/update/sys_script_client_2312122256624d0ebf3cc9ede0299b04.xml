@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update table="sys_script_client">
+  <sys_script_client action="INSERT_OR_UPDATE">
+    <sys_id>2312122256624d0ebf3cc9ede0299b04</sys_id>
+    <sys_scope display_value="x_2073292_leave_0">6b5e0ee7735e4310fae6fdb25ab8b71a</sys_scope>
+    <sys_update_name>sys_script_client_2312122256624d0ebf3cc9ede0299b04</sys_update_name>
+    <active>true</active>
+    <applies_extended>false</applies_extended>
+    <description/>
+    <field>start_date</field>
+    <global>true</global>
+    <isolate_script>false</isolate_script>
+    <messages/>
+    <name>Calculate Days on Start Date Change</name>
+    <script><![CDATA[function onChange(control, oldValue, newValue, isLoading) {
+    if (isLoading || newValue === '') {
+        return;
+    }
+
+    var startDate = newValue;
+    var endDate = g_form.getValue('end_date');
+
+    if (startDate && endDate) {
+        // Validate end_date >= start_date
+        if (endDate < startDate) {
+            g_form.addErrorMessage('End date cannot be before start date');
+            g_form.setValue('number_of_days', '');
+            return;
+        }
+
+        // Calculate number of days
+        var start = new Date(startDate);
+        var end = new Date(endDate);
+        var diffTime = Math.abs(end - start);
+        var diffDays = Math.ceil(diffTime / (1000 * 60 * 60 * 24)) + 1;
+        g_form.setValue('number_of_days', diffDays);
+    }
+}
+]]></script>
+    <sys_name>Calculate Days on Start Date Change</sys_name>
+    <table>x_2073292_leave_0_leave_request</table>
+    <type>onChange</type>
+    <ui_type>10</ui_type>
+    <view/>
+  </sys_script_client>
+</record_update>
