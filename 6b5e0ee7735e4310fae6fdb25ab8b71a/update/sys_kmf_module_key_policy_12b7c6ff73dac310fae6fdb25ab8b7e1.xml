@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update table="sys_kmf_module_key_policy">
+    <sys_kmf_module_key_policy action="INSERT_OR_UPDATE">
+        <crypto_module display_value="com_glide_security_oauth_jwt_signing">5520d875ff32221099cfffffffffff8e</crypto_module>
+        <key_type display_value="Private Signature Generation Key">eacabf24c7003300af4d43c6f0976341</key_type>
+        <last_enforced>2026-08-01 11:03:46</last_enforced>
+        <result>reject</result>
+        <sys_class_name>sys_kmf_module_key_policy</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2026-08-01 11:03:46</sys_created_on>
+        <sys_id>12b7c6ff73dac310fae6fdb25ab8b7e1</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_name/>
+        <sys_package display_value="Leave Management" source="x_2073292_leave_0">6b5e0ee7735e4310fae6fdb25ab8b71a</sys_package>
+        <sys_policy/>
+        <sys_scope display_value="Leave Management">6b5e0ee7735e4310fae6fdb25ab8b71a</sys_scope>
+        <sys_update_name>sys_kmf_module_key_policy_12b7c6ff73dac310fae6fdb25ab8b7e1</sys_update_name>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2026-08-01 11:03:46</sys_updated_on>
+    </sys_kmf_module_key_policy>
+</record_update>

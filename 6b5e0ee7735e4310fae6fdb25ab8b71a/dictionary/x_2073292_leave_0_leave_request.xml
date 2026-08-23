@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8"?><database>
+    <element db_object_id="9c609eeb735e4310fae6fdb25ab8b75b" label="Leave Request" max_length="40" name="x_2073292_leave_0_leave_request" type="collection">
+        <element label="Leave Type" mandatory="true" max_length="40" name="leave_type" type="choice">
+            <choice>
+                <element inactive_on_update="false" label="Casual Leave" value="casual_leave"/>
+                <element inactive_on_update="false" label="Work From Home" value="work_from_home"/>
+                <element inactive_on_update="false" label="Sick Leave" value="sick_leave"/>
+                <element inactive_on_update="false" label="Earned Leave" value="earned_leave"/>
+            </choice>
+        </element>
+        <element label="Number of Days" max_length="40" name="number_of_days" read_only="true" read_only_option="instance_configured" type="integer"/>
+        <element choice="2" label="Status" max_length="255" name="statu0" type="choice">
+            <choice>
+                <element inactive_on_update="false" label="Approved" sequence="1" value="approved"/>
+                <element inactive_on_update="false" label="Pending" sequence="0" value="pending"/>
+                <element inactive_on_update="false" label="Rejected" sequence="2" value="rejected"/>
+            </choice>
+        </element>
+        <element default="pending" label="Status" mandatory="true" max_length="40" name="status" type="choice">
+            <choice>
+                <element inactive_on_update="false" label="Cancelled" sequence="3" value="cancelled"/>
+                <element inactive_on_update="false" label="Rejected" sequence="2" value="rejected"/>
+                <element inactive_on_update="false" label="Approved" sequence="1" value="approved"/>
+                <element inactive_on_update="false" label="Pending" sequence="0" value="pending"/>
+            </choice>
+        </element>
+        <element label="End Date" mandatory="true" max_length="40" name="end_date" type="glide_date"/>
+        <element label="Approval Date" max_length="40" name="approval_date" type="glide_date_time"/>
+        <element label="Manager" max_length="32" name="manager" reference="sys_user" type="reference"/>
+        <element label="Approved By" max_length="32" name="approved_by" reference="sys_user" type="reference"/>
+        <element label="Comments" max_length="1000" name="comments" type="string"/>
+        <element label="Rejection Reason" max_length="500" name="rejection_reason" type="string"/>
+        <element display="true" label="Employee" mandatory="true" max_length="32" name="employee" reference="sys_user" type="reference"/>
+        <element label="Reason" max_length="500" name="reason" type="string"/>
+        <element label="Start Date" mandatory="true" max_length="40" name="start_date" type="glide_date"/>
+        <index name="index">
+            <element name="approved_by"/>
+        </index>
+        <index name="index2">
+            <element name="employee"/>
+        </index>
+        <index name="index3">
+            <element name="manager"/>
+        </index>
+    </element>
+</database>

@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?><database>
+    <element attributes="enforce_dot_walk_cross_scope_access=true" db_object_id="d592db8b04ce412094184e5703d8f07e" label="Leave Balance" name="x_2073292_leave_0_leave_balance" type="collection">
+        <element default="2025" label="Year" mandatory="true" max_length="40" name="year" type="integer"/>
+        <element default="12" label="Remaining" max_length="40" name="remaining" type="integer"/>
+        <element default="12" label="Total Allocated" max_length="40" name="total_allocated" type="integer"/>
+        <element default="0" label="Used" max_length="40" name="used" type="integer"/>
+        <element display="true" label="Employee" mandatory="true" max_length="32" name="employee" reference="sys_user" type="reference"/>
+        <element label="Leave Type" mandatory="true" max_length="40" name="leave_type" type="choice">
+            <choice>
+                <element inactive_on_update="false" label="Casual Leave" value="casual_leave"/>
+                <element inactive_on_update="false" label="Earned Leave" value="earned_leave"/>
+                <element inactive_on_update="false" label="Sick Leave" value="sick_leave"/>
+                <element inactive_on_update="false" label="Work From Home" value="work_from_home"/>
+            </choice>
+        </element>
+        <index name="index">
+            <element name="employee"/>
+        </index>
+    </element>
+</database>

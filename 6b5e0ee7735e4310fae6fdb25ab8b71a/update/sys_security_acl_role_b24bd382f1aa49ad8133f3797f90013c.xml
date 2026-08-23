@@ -1,9 +1,18 @@
 <?xml version="1.0" encoding="UTF-8"?><record_update table="sys_security_acl_role">
-  <sys_security_acl_role action="INSERT_OR_UPDATE">
-    <sys_id>b24bd382f1aa49ad8133f3797f90013c</sys_id>
-    <sys_scope display_value="x_2073292_leave_0">6b5e0ee7735e4310fae6fdb25ab8b71a</sys_scope>
-    <sys_update_name>sys_security_acl_role_b24bd382f1aa49ad8133f3797f90013c</sys_update_name>
-    <sys_security_acl>940adcba9cf84b36a271d57798be72ed</sys_security_acl>
-    <sys_user_role name="x_2073292_leave_0.leave.admin">494b4a7fa41a4217b4ce91846a56fe70</sys_user_role>
-  </sys_security_acl_role>
+    <sys_security_acl_role action="INSERT_OR_UPDATE">
+        <sys_class_name>sys_security_acl_role</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2026-08-23 13:27:47</sys_created_on>
+        <sys_id>b24bd382f1aa49ad8133f3797f90013c</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_name>x_2073292_leave_0_leave_request.x_2073292_leave_0.leave.admin</sys_name>
+        <sys_package display_value="Leave Management" source="x_2073292_leave_0">6b5e0ee7735e4310fae6fdb25ab8b71a</sys_package>
+        <sys_policy/>
+        <sys_scope display_value="Leave Management">6b5e0ee7735e4310fae6fdb25ab8b71a</sys_scope>
+        <sys_security_acl display_value="x_2073292_leave_0_leave_request">940adcba9cf84b36a271d57798be72ed</sys_security_acl>
+        <sys_update_name>sys_security_acl_role_b24bd382f1aa49ad8133f3797f90013c</sys_update_name>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2026-08-23 13:27:47</sys_updated_on>
+        <sys_user_role display_value="x_2073292_leave_0.leave.admin" name="x_2073292_leave_0.leave.admin">7560522f735e4310fae6fdb25ab8b7c7</sys_user_role>
+    </sys_security_acl_role>
 </record_update>
